@@ -1,0 +1,33 @@
+{
+  "name": "workshop-nodejs-hello_nodejs",
+  "version": "1.0.0",
+  "description": "Node.js service mirroring the Quarkus hello world translation endpoint.",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/na-launch-workshop/workshop-nodejs-hello_nodejs.git"
+  },
+  "keywords": [
+    "express",
+    "translations",
+    "workshop"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/na-launch-workshop/workshop-nodejs-hello_nodejs/issues"
+  },
+  "homepage": "https://github.com/na-launch-workshop/workshop-nodejs-hello_nodejs#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "supertest": "^7.1.4"
+  }
+}
