@@ -1,10 +1,9 @@
-# Node.js Multi Container
+# Node.js Hello World Translation Service
 
-This project reimplements multi container using Node.js and Express. It exposes a single endpoint that returns a localized greeting with an ISO-8601 timestamp appended, mirroring the original Quarkus behaviour.
+This project reimplements the Quarkus-based hello world service from `workshop-quarkus-hello_quarkus` using Node.js and Express. It exposes a single endpoint that returns a localized greeting with an ISO-8601 timestamp appended, mirroring the original Quarkus behaviour.
 
 ## Prerequisites
-- Node.js 22
-- Node.js 24
+- Node.js 18 or newer
 - npm
 
 ## Installation
@@ -32,4 +31,4 @@ Environment variables provide the same configurability as the Quarkus version:
 - `TRANSLATION_FILE` (default: `translations.json`) – File located in the `resources/` directory that contains the greeting map.
 - `PORT` (default: `8080`) – Port for the HTTP server.
 
-All translations are stored in `resources/translations.json`
+All translations are stored in `resources/translations.json` 
