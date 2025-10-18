@@ -6,20 +6,12 @@ metadata:
 attributes:
   che-editor: vscode
 components:
-  - name: node22-tools
+  - name: tools
     container:
-      image: docker.io/library/node:22
-      command:
-        - sh
-      args:
-        - -c
-        - mkdir -p /tmp/.npm && while sleep 3600; do :; done
-      env:
-        - name: NPM_CONFIG_CACHE
-          value: /tmp/.npm
+      image: image-registry.openshift-image-registry.svc:5000/openshift/udi-rhel9:3.22
       endpoints:
         - exposure: public
-          name: node22-app
+          name: hello-by-lang
           protocol: https
           targetPort: 8080
           path: /
@@ -28,80 +20,31 @@ components:
       memoryLimit: '8G'
       memoryRequest: '4G'
       mountSources: true
-  - name: node24-tools
-    container:
-      image: docker.io/library/node:24
-      command:
-        - sh
-      args:
-        - -c
-        - mkdir -p /tmp/.npm && while sleep 3600; do :; done
-      env:
-        - name: NPM_CONFIG_CACHE
-          value: /tmp/.npm
-      endpoints:
-        - exposure: public
-          name: node24-app
-          protocol: https
-          targetPort: 8081
-          path: /
-      cpuLimit: '4'
-      cpuRequest: '1'
-      memoryLimit: '8G'
-      memoryRequest: '4G'
-      mountSources: true
 commands:
-  - id: node22-install
+  - id: 1-install
     exec:
-      label: "1. Install dependencies (Node 22)"
-      component: node22-tools
+      label: "1. Install dependencies"
+      component: tools
       workingDir: ${PROJECT_SOURCE}
       commandLine: "npm install"
       group:
         kind: build
         isDefault: true
-  - id: node22-test
+  - id: 2-test
     exec:
-      label: "2. Run tests (Node 22)"
-      component: node22-tools
+      label: "2. Run tests"
+      component: tools
       workingDir: ${PROJECT_SOURCE}
       commandLine: "npm test"
       group:
         kind: test
         isDefault: true
-  - id: node22-start
+  - id: 3-start
     exec:
-      label: "3. Start development server (Node 22)"
-      component: node22-tools
+      label: "3. Start development server"
+      component: tools
       workingDir: ${PROJECT_SOURCE}
       commandLine: "npm start"
       group:
         kind: run
         isDefault: true
-  - id: node24-install
-    exec:
-      label: "1b. Install dependencies (Node 24)"
-      component: node24-tools
-      workingDir: ${PROJECT_SOURCE}
-      commandLine: "npm install"
-      group:
-        kind: build
-        isDefault: false
-  - id: node24-test
-    exec:
-      label: "2b. Run tests (Node 24)"
-      component: node24-tools
-      workingDir: ${PROJECT_SOURCE}
-      commandLine: "npm test"
-      group:
-        kind: test
-        isDefault: false
-  - id: node24-start
-    exec:
-      label: "3b. Start development server (Node 24)"
-      component: node24-tools
-      workingDir: ${PROJECT_SOURCE}
-      commandLine: "npm start"
-      group:
-        kind: run
-        isDefault: false
