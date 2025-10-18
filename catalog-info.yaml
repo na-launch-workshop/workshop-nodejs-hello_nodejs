@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: workshop-nodejs-hello_nodejs
-  title: Hello Node.js
+  title: Multi Stage
   description: |
     Introduction to Red Hat Dev Spaces with a Node.js translation service.
   annotations:

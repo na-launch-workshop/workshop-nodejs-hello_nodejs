@@ -32,4 +32,4 @@ Environment variables provide the same configurability as the Quarkus version:
 - `TRANSLATION_FILE` (default: `translations.json`) – File located in the `resources/` directory that contains the greeting map.
 - `PORT` (default: `8080`) – Port for the HTTP server.
 
-All translations are stored in `resources/translations.json`, copied verbatim from the Quarkus project.
+All translations are stored in `resources/translations.json`
