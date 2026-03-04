@@ -2,7 +2,7 @@
 
 **Technology Stack:**
 
-- .NET
+- Node.js
 
 ---
 
