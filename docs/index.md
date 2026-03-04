@@ -1,4 +1,4 @@
-# 🚀 **Module: .NET Hello World Translation Service**
+# 🚀 **Module: Node.js Hello World Translation Service**
 
 **Technology Stack:**
 
