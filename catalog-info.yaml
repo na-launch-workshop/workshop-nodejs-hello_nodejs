@@ -2,26 +2,20 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: workshop-nodejs-hello_nodejs
-  title: Multi Stage
+  title: Hello Node.js
   description: |
-    Introduction to Red Hat Dev Spaces with a Node.js translation service.
+    Introduction to Red Hat Dev Spaces with a Node.js translation service
   annotations:
     backstage.io/techdocs-ref: dir:.
   tags:
     - devspaces
-  links:
-    - url: https://<server>/#<repo>
-      title: "Launch from Dev Spaces"
-      icon: web
+    - nodejs
+# links:
+#    - url: https://<openshift-cluster>/#<hosted-git-repo>
+#      title: "Launch from Dev Spaces"
+#      icon: web
 spec:
   type: module
   lifecycle: production
   owner: group:default/workshop-admins
-  gitlab:
-    remoteUrl: https://<server>
-    owner: developers
-    repository: workshop-repository
-    branch: main
   subcomponentOf: component:default/workshop-repository
-  dependsOn:
-    - component:default/workshop-agenda
