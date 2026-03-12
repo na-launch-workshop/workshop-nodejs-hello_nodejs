@@ -10,9 +10,13 @@
 
 This project reimplements the Quarkus-based hello world service from `workshop-quarkus-hello_quarkus` using Node.js and Express. It exposes a single endpoint that returns a localized greeting with an ISO-8601 timestamp appended, mirroring the original Quarkus behaviour.
 
+---
+
 ### Prerequisites
 - Node.js 18 or newer
 - npm
+
+---
 
 ## 🐾 **Guided Walkthrough**
 
